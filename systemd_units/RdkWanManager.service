@@ -27,6 +27,7 @@ Environment="Subsys=eRT."
 Environment="LOG4C_RCPATH=/etc"
 EnvironmentFile=/etc/device.properties
 WorkingDirectory=/usr/rdk/wanmanager
+ExecStartPre=/bin/sh -c 'sleep 10'
 ExecStartPre=/bin/touch /tmp/OS_WANMANAGER_ENABLED
 ExecStartPre=-/bin/sh -c '[ -x /usr/ccsp/dhcpmgr/DHCPMgrPSMValueCheck.sh ] && (/usr/ccsp/dhcpmgr/DHCPMgrPSMValueCheck.sh)'
 ExecStartPre=/bin/sh -c '(/usr/ccsp/utopiaInitCheck.sh)'
